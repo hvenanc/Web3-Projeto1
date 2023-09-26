@@ -79,12 +79,12 @@ public class ManagerDao {
     public static void main(String args[]){
         
         Usuario u = new Usuario();
-        u.setBairro("Ipsep");
+        u.setBairro("Ibura");
         u.setCidade("Recife");
-        u.setContato("827136712");
-        u.setEmail("joaopaulorockfeler@gmail.com");
-        u.setLogin("rockfeler123");
-        u.setSenha("1234");
+        u.setContato("827135712");
+        u.setEmail("rick@gmail.com");
+        u.setLogin("rick70");
+        u.setSenha("7890");
         
         getCurrentInstance().insert(u);
         
