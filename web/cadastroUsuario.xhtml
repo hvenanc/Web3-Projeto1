@@ -13,24 +13,41 @@
             
             <p:fieldset legend="Cadastro de Usuário">
                 
-                <p:panelGrid columns="2">
+                <p:panelGrid columns="3">
                     <h:outputText value="Login"/>
-                    <h:inputText value="#{usuarioController.usuarioCadastro.login}"/>
-                    
-                    <h:outputText value="Senha"/>
-                    <p:password value="#{usuarioController.usuarioCadastro.senha}"/>
-                    
+                    <h:inputText id="txtLogin" value="#{usuarioController.usuarioCadastro.login}" 
+                                 required="true" requiredMessage="O Login é obrigatório!"/>
+                    <p:message for="txtLogin"/>
+                   
                      <h:outputText value="Email"/>
-                     <h:inputText value="#{usuarioController.usuarioCadastro.email}"/>
+                     <h:inputText  id="txtEmail" value="#{usuarioController.usuarioCadastro.email}"
+                                  required="true" requiredMessage="O Email é obrigatório!"/>
+                     <p:message for="txtEmail"/>
                     
                      <h:outputText value="Cidade"/>
-                     <h:inputText value="#{usuarioController.usuarioCadastro.cidade}"/>
+                     <h:inputText id="txtCidade" value="#{usuarioController.usuarioCadastro.cidade}"
+                                  required="true" requiredMessage="A Cidade é obrigatória!"/>
+                     <p:message for="txtCidade"/>
                     
                      <h:outputText value="Bairro"/>
-                     <h:inputText value="#{usuarioController.usuarioCadastro.bairro}"/>
+                     <h:inputText id="txtBairro" value="#{usuarioController.usuarioCadastro.bairro}"
+                                  required="true" requiredMessage="O Bairro é obrigatório!"/>
+                     <p:message for="txtBairro"/>
                     
-                     <h:outputText value="Contato"/>
-                     <h:inputText value="#{usuarioController.usuarioCadastro.contato}"/>
+                     <h:outputText id="txtContato" value="Contato"/>
+                     <h:inputText value="#{usuarioController.usuarioCadastro.contato}"
+                                  required="true" requiredMessage="O Contato é obrigatório!"/>
+                     <p:message for="txtContato"/>
+                     
+                      <h:outputText value="Senha"/>
+                    <p:password id="txtSenha" value="#{usuarioController.usuarioCadastro.senha}"
+                                required="true" requiredMessage="A Senha é obrigatória!"/>
+                    <p:message for="txtSenha"/>
+                    
+                    <h:outputText value="Confirmar Senha"/>
+                    <p:password id="txtConfirma" value="#{confirmaSenha}"
+                                required="true" requiredMessage="A Confirmação da senha é obrigatória!"/>
+                    <p:message for="txtConfirma"/>
                     
                     
                 </p:panelGrid>
@@ -48,14 +65,15 @@
                       widgetVar="widDialCadUsuario">
                 
                 <h:outputText value="Deseja realmente cadastrar o usuario?"/><br/>
-                <p:commandButton value="Sim" action="#{usuarioController.inserir()}"
+                <p:commandButton value="Sim" action="#{usuarioController.inserir(confirmaSenha)}"
                                  oncomplete="PF('widDialCadUsuario').hide()"
-                                 update=":grow :formCadUsuario"/>
+                                 update=":grow :formCadUsuario :msgs"/>
                 <p:commandButton value="Não" oncomplete="PF('widDialCadUsuario').hide()"/>
                 
             </p:dialog>
             
         </h:form>
+        <p:messages id="msgs"/>
     </h:body>
 </html>
 

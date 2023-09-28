@@ -30,7 +30,14 @@ public class UsuarioController {
         
     }
     
-    public void inserir() {
+    public void inserir(String confirmacao) {
+        
+        if(!this.usuarioCadastro.getSenha().equals(confirmacao)) {
+            FacesContext.getCurrentInstance().addMessage("formCadUsuario:txtSenha", 
+                    new FacesMessage(FacesMessage.SEVERITY_ERROR, "Erro", "As senhas não batem!"));
+            return;
+        }
+        
         ManagerDao.getCurrentInstance().insert(this.usuarioCadastro);
         this.usuarioCadastro = new Usuario();
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Usuário Cadastrado com Sucesso!"));
