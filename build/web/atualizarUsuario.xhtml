@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Atualizar Cadastro</title>
+    </h:head>
+    <h:body>
+        
+        <h:form id="formEditarUsuario">
+            
+            <p:fieldset legend="Editar Dados do Usuário">
+                
+                <h:panelGrid columns="3">
+                     <h:outputText value="Login: "/>
+                     <h:inputText id="txtLogin" value="#{usuarioController.selection.login}" 
+                                 required="true" requiredMessage="O Login é obrigatório!"/>
+                    <p:message for="txtLogin"/>
+                   
+                     <h:outputText value="Email: "/>
+                     <h:inputText  id="txtEmail" value="#{usuarioController.selection.email}"
+                                  required="true" requiredMessage="O Email é obrigatório!"/>
+                     <p:message for="txtEmail"/>
+                    
+                     <h:outputText value="Cidade: "/>
+                     <h:inputText id="txtCidade" value="#{usuarioController.selection.cidade}"
+                                  required="true" requiredMessage="A Cidade é obrigatória!"/>
+                     <p:message for="txtCidade"/>
+                    
+                     <h:outputText value="Bairro: "/>
+                     <h:inputText  id="txtBairro" value="#{usuarioController.selection.bairro}"
+                                  required="true" requiredMessage="O Bairro é obrigatório!"/>
+                     <p:message for="txtBairro"/>
+                    
+                     <h:outputText value="Contato: "/>
+                     <h:inputText  id="txtContato" value="#{usuarioController.selection.contato}"
+                                  required="true" requiredMessage="O Contato é obrigatório!"/>
+                     <p:message for="txtContato"/>
+                </h:panelGrid>
+                
+                <p:commandButton value="Editar" oncomplete="PF('widDialEditarUsuario').show()"/>
+                <h:outputText value="Cancelar"/>
+                
+            </p:fieldset>
+            
+            <p:dialog id="dialEditarUsuario"
+                      modal="true" visible="false" showEffect="fade" hideEffect="fade"
+                      widgetVar="widDialEditarUsuario">
+                          
+                <h:outputText value="Deseja realmente atualizar os dados"/><br/>
+                <p:commandButton value="Sim" action="#{usuarioController.alterar()}"
+                                 oncomplete="PF('widDialEditarUsuario').hide();"
+                                 />
+                <p:commandButton value="Não" oncomplete="PF('widDialEditarUsuario').hide()"/>
+                
+            </p:dialog>
+            
+        </h:form>
+        
+    </h:body>
+</html>
+

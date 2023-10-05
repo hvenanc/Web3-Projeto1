@@ -7,6 +7,7 @@ package com.devcaotics.controller;
 
 import com.devcaotics.model.dao.ManagerDao;
 import com.devcaotics.model.negocios.Usuario;
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -22,6 +23,7 @@ import javax.faces.context.FacesContext;
 public class UsuarioController {
     
     private Usuario usuarioCadastro;
+    private Usuario selection;
     
     @PostConstruct
     public void init() {
@@ -42,6 +44,36 @@ public class UsuarioController {
         this.usuarioCadastro = new Usuario();
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Usuário Cadastrado com Sucesso!"));
     }
+    
+    public List<Usuario> readUsuarios() {
+        
+        List<Usuario> usuarios = null;
+        
+        usuarios = ManagerDao.getCurrentInstance()
+                .read("select u from Usuario u", Usuario.class);
+        
+        return usuarios;
+        
+    }
+    
+    public void deletar() {
+       
+        ManagerDao.getCurrentInstance().delete(this.selection);
+        
+        FacesContext.getCurrentInstance().
+                addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso!", "Usuário Removido"));
+    }
+    
+    public String alterar() {
+        
+        ManagerDao.getCurrentInstance().update(this.selection);
+        
+       FacesContext.getCurrentInstance().
+                addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso", "Dados alterados!"));
+        
+       return "usuarios";
+    } 
+        
 
     public Usuario getUsuarioCadastro() {
         return usuarioCadastro;
@@ -50,6 +82,16 @@ public class UsuarioController {
     public void setUsuarioCadastro(Usuario usuarioCadastro) {
         this.usuarioCadastro = usuarioCadastro;
     }
+
+    public Usuario getSelection() {
+        return selection;
+    }
+
+    public void setSelection(Usuario selection) {
+        this.selection = selection;
+    }
+    
+    
     
     
     
