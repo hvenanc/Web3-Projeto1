@@ -7,6 +7,7 @@ package com.devcaotics.controller;
 
 import com.devcaotics.model.dao.ManagerDao;
 import com.devcaotics.model.negocios.Ong;
+import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
@@ -22,6 +23,7 @@ import javax.faces.context.FacesContext;
 public class OngController {
     
     private Ong ongCadastro;
+    private Ong selection;
 
     
     @PostConstruct
@@ -37,6 +39,23 @@ public class OngController {
         
     }
     
+    public List<Ong> readOngs() {
+        List<Ong> ongs = null;
+        
+        ongs = ManagerDao.getCurrentInstance()
+                .read("select o  from Ong o", Ong.class);
+        
+        return ongs;
+        
+    }
+    
+    public void deletar() {
+        
+        ManagerDao.getCurrentInstance().delete(this.selection);
+        FacesContext.getCurrentInstance().
+                addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso", "Ong deletada com Sucesso!"));
+    }
+    
      public Ong getOngCadastro() {
         return ongCadastro;
     }
@@ -44,6 +63,15 @@ public class OngController {
     public void setOngCadastro(Ong ongCadastro) {
         this.ongCadastro = ongCadastro;
     }
+
+    public Ong getSelection() {
+        return selection;
+    }
+
+    public void setSelection(Ong selection) {
+        this.selection = selection;
+    }
+    
     
     
 }

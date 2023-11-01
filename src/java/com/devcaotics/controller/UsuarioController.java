@@ -24,6 +24,7 @@ public class UsuarioController {
     
     private Usuario usuarioCadastro;
     private Usuario selection;
+    private String modalType;
     
     @PostConstruct
     public void init() {
@@ -69,9 +70,10 @@ public class UsuarioController {
         ManagerDao.getCurrentInstance().update(this.selection);
         
        FacesContext.getCurrentInstance().
-                addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso", "Dados alterados!"));
+                addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Sucesso: Dados Alterados", "Dados alterados!"));
         
-       return "usuarios";
+       //return "usuarios";
+       return "UsuariosBootFaces";
     } 
         
 
@@ -90,6 +92,16 @@ public class UsuarioController {
     public void setSelection(Usuario selection) {
         this.selection = selection;
     }
+
+    public String getModalType() {
+        return modalType;
+    }
+
+    public void setModalType(String modalType) {
+        this.modalType = modalType;
+    }
+    
+    
     
     
     

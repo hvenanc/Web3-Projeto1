@@ -14,7 +14,7 @@
             
             <p:dataTable id="tabelaUsuarios"
                          value="#{usuarioController.readUsuarios()}"
-                         var="usuario" paginator="true" rows="5"
+                         var="usuario" paginator="true" rows="1"
                          selection="#{usuarioController.selection}" selectionMode="single"
                          rowKey="#{usuario.codigo}">
                 
@@ -38,7 +38,7 @@
             <p:commandButton value="Deletar" action="#{usuarioController.deletar()}"
                              update=":gro @form">
             <p:confirm message="Deseja realmente deletar o usuário?"/>
-            </p:commandButton>
+        </p:commandButton>
             
             <p:confirmDialog global="true">
                 <p:commandButton value="Sim" styleClass="ui-confirmdialog-yes"/>

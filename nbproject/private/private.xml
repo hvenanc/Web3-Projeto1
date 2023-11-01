@@ -3,16 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/users/henrique/Meus%20Documentos/NetBeansProjects/Projeto1Web3/src/java/com/devcaotics/model/negocios/Doguinho.java</file>
-            <file>file:/C:/users/henrique/Meus%20Documentos/NetBeansProjects/Projeto1Web3/src/java/com/devcaotics/model/dao/ManagerDao.java</file>
-            <file>file:/C:/users/henrique/Meus%20Documentos/NetBeansProjects/Projeto1Web3/src/java/com/devcaotics/model/negocios/Ong.java</file>
-            <file>file:/C:/users/henrique/Meus%20Documentos/NetBeansProjects/Projeto1Web3/web/cadastroUsuario.xhtml</file>
+            <file>file:/C:/users/henrique/Meus%20Documentos/NetBeansProjects/Projeto1Web3/web/usuariosBoot.xhtml</file>
             <file>file:/C:/users/henrique/Meus%20Documentos/NetBeansProjects/Projeto1Web3/src/java/com/devcaotics/controller/UsuarioController.java</file>
-            <file>file:/C:/users/henrique/Meus%20Documentos/NetBeansProjects/Projeto1Web3/src/java/com/devcaotics/model/negocios/Alerta.java</file>
+            <file>file:/C:/users/henrique/Meus%20Documentos/NetBeansProjects/Projeto1Web3/web/ongs.xhtml</file>
             <file>file:/C:/users/henrique/Meus%20Documentos/NetBeansProjects/Projeto1Web3/src/java/com/devcaotics/model/negocios/Usuario.java</file>
-            <file>file:/C:/users/henrique/Meus%20Documentos/NetBeansProjects/Projeto1Web3/web/atualizarUsuario.xhtml</file>
             <file>file:/C:/users/henrique/Meus%20Documentos/NetBeansProjects/Projeto1Web3/src/java/com/devcaotics/controller/OngController.java</file>
-            <file>file:/C:/users/henrique/Meus%20Documentos/NetBeansProjects/Projeto1Web3/web/cadastroOngs.xhtml</file>
+            <file>file:/C:/users/henrique/Meus%20Documentos/NetBeansProjects/Projeto1Web3/web/UsuariosBootFaces.xhtml</file>
             <file>file:/C:/users/henrique/Meus%20Documentos/NetBeansProjects/Projeto1Web3/web/usuarios.xhtml</file>
         </group>
     </open-files>
